@@ -33,7 +33,7 @@ function jugarJuego() {
     // Aca declaramos una variable para la seleccion de usuario que tenga un formato mas uniforme y valida, pasamos lo que escribio ('string') a 'Piedra' 'Papel' o 'Tijera' especificamente.
     const eleccionUsuario =
       inputUsuario.trim().charAt(0).toUpperCase() +
-      inputUsuario.slice(1).toLowerCase();
+      inputUsuario.trim().slice(1).toLowerCase();
 
     // Comprobación de elección válida del jugador
     if (
