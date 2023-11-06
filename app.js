@@ -1,6 +1,7 @@
 //Sirve para chequear que se conecto mi archivo JS
 console.log("Conectado");
 
+// LLamo a la funcion de jugarJuego para que se inicie una vez cargada la página.
 jugarJuego();
 function eligeMovimientoComputadora() {
   const randomNumber = Math.random();
@@ -13,7 +14,7 @@ function eligeMovimientoComputadora() {
   } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
     eleccionComputadora = "Tijera";
   }
-  //tiro el return para que el resultado pueda ser usado fuera del scope del condicional de la eleccionComputadora
+  // Return para que el resultado pueda ser usado fuera del scope del condicional de la eleccionComputadora
   return eleccionComputadora;
 }
 
@@ -23,13 +24,13 @@ function jugarJuego() {
 
   while (usuarioGana < 2 && computadoraGana < 2) {
     const inputUsuario = prompt(
-      "Juega al mejor de 3. Elige Piedra, Papel o Tijera:"
+      "Gana el mejor de 3 rondas.\nEscribe Piedra, Papel o Tijera:"
     );
     if (inputUsuario === null) {
       break; // El usuario canceló el juego
     }
 
-    //Aca declaramos una variable para la seleccion de usuario que tenga un formato mas uniforme y valida, pasamos lo que escribio ('string') a 'Piedra' 'Papel' o 'Tijera' especificamente.
+    // Aca declaramos una variable para la seleccion de usuario que tenga un formato mas uniforme y valida, pasamos lo que escribio ('string') a 'Piedra' 'Papel' o 'Tijera' especificamente.
     const eleccionUsuario =
       inputUsuario.trim().charAt(0).toUpperCase() +
       inputUsuario.slice(1).toLowerCase();
@@ -66,7 +67,7 @@ function jugarJuego() {
         }
       } else if (eleccionUsuario === "Piedra") {
         if (eleccionComputadora === "Piedra") {
-          resultado = "Empate";
+          resultado = "EMPATE";
         } else if (eleccionComputadora === "Papel") {
           resultado = "PERDISTE";
           computadoraGana++;
@@ -85,7 +86,7 @@ function jugarJuego() {
       );
     }
   }
-
+  // Sale del bucle
   if (usuarioGana >= 2) {
     alert("Ganaste el mejor de 3!");
   } else {
