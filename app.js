@@ -1,12 +1,12 @@
-//Sirve para chequear que se conecto mi archivo JS
+//Sirve para chequear que se conectó mi archivo JS
 console.log("Conectado");
 
-// LLamo a la funcion de jugarJuego para que se inicie una vez cargada la página.
+// LLamo a la función de jugarJuego para que se inicie una vez cargada la página.
 jugarJuego();
 function eligeMovimientoComputadora() {
   const randomNumber = Math.random();
   let eleccionComputadora = "";
-  // Aca se genera una eleccion al azar para la computadora
+  // Aca se genera una elección al azar para la computadora
   if (randomNumber >= 0 && randomNumber < 1 / 3) {
     eleccionComputadora = "Piedra";
   } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
@@ -24,13 +24,13 @@ function jugarJuego() {
 
   while (usuarioGana < 2 && computadoraGana < 2) {
     const inputUsuario = prompt(
-      "Gana el mejor de 3 rondas.\nEscribe Piedra, Papel o Tijera:"
+      "Gana el mejor de 3.\nEscribe Piedra, Papel o Tijera:"
     );
     if (inputUsuario === null) {
       break; // El usuario canceló el juego
     }
 
-    // Aca declaramos una variable para la seleccion de usuario que tenga un formato mas uniforme y valida, pasamos lo que escribio ('string') a 'Piedra' 'Papel' o 'Tijera' especificamente.
+    // Aca declaramos una variable para la selección de usuario que tenga un formato más uniforme y válido, pasamos lo que escribió ('string') a 'Piedra' 'Papel' o 'Tijera' especificamente.
     const eleccionUsuario =
       inputUsuario.trim().charAt(0).toUpperCase() +
       inputUsuario.trim().slice(1).toLowerCase();
